@@ -24,11 +24,11 @@ const board = document.getElementById('board');
             boardState[index] = currentPlayer;
 
             if (checkWinner(currentPlayer, boardState)) {
-                window.alert(`${currentPlayer} wins!`);
-                resetBoard();
+                //window.alert(`${currentPlayer} wins!`);
+                showModal(`Player ${currentPlayer} wins!`);
             } else if (boardState.every(cell => cell !== '')) {
-                window.alert('It\'s a draw!');
-                resetBoard();
+                //window.alert('It\'s a draw!');
+                showModal('It\'s a draw!');
             } else {
                 currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
             }
@@ -49,4 +49,18 @@ const board = document.getElementById('board');
             boardState.fill('');
             cells.forEach(cell => cell.textContent = '');
             currentPlayer = 'X';
+        }
+
+        function showModal(value){
+            const modal = document.getElementById("myModal");
+            const okBtn = document.getElementById("okBtn");
+            const message = document.getElementById("message");
+
+            modal.style.display = "inline-flex";
+            message.textContent = value;
+
+            okBtn.onclick = function() {
+                modal.style.display = "none";
+                resetBoard();
+            };
         }
