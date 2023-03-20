@@ -1,3 +1,5 @@
+const PlayerText = document.getElementById('CurrenPlayer');
+
 const board = document.getElementById('board');
         const cells = Array.from(document.getElementsByClassName('cell'));
         const winningCombos = [
@@ -29,6 +31,13 @@ const board = document.getElementById('board');
                 resetBoard();
             } else {
                 currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            }
+
+            PlayerText.textContent = 'Player '+currentPlayer+'\'s Turn';
+            if(currentPlayer === 'X'){
+                PlayerText.style.color = '#b5b019';
+            } else {
+                PlayerText.style.color = '#FF6A00';
             }
         });
 
