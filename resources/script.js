@@ -59,6 +59,21 @@ const board = document.getElementById('board');
             modal.style.display = "inline-flex";
             message.textContent = value;
 
+            if (checkWinner(currentPlayer, boardState)) {
+                if(currentPlayer === 'X'){
+                    message.style.color = '#b5b019';
+                    okBtn.style.background = '#b5b019';
+                } else {
+                    message.style.color = '#FF6A00';
+                    okBtn.style.background = '#FF6A00';
+                }
+
+            } else if (boardState.every(cell => cell !== '')) {
+                message.style.color = '#152f8c';
+                okBtn.style.background = '#152f8c';
+            }
+
+            if(value)
             okBtn.onclick = function() {
                 modal.style.display = "none";
                 resetBoard();
