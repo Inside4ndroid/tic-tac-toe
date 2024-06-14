@@ -1,6 +1,7 @@
-# tic-tac-toe
-HTML / JAVASCRIPT Tic-Tac-Toe Game
+## Tic Tac Toe
 
-I made this to keep the kids entertained at restaurants while waiting for service.
+A super simple Javascript / Html game based on the classic Tic Tac Toe game.
 
-you can play it here >> https://inside4ndroid.github.io/tic-tac-toe/
+- :video_game: Play The Game: [Play Now](https://inside4ndroid.github.io/tic-tac-toe/)
+
+---
